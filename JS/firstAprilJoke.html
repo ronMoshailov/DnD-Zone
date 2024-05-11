@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack Alert</title>
+    <style>
+    body {
+    background-color: black;
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.alert-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 3px solid red;
+    background-color: #333;
+    text-align: center;
+}
+
+.alert-container h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: blinker 1.5s linear infinite;
+}
+
+.alert-container p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.alert-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes blinker {  
+    50% { opacity: 0; }
+}
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="alert-container">
+        <h1>WARNING!</h1>
+        <p>Your computer has been hacked. Your personal data is at risk.</p>
+        <p>Please contact support immediately at <strong>1-800-XXX-XXXX</strong>.</p>
+        <button>Get Help</button>
+    </div>
+</body>
+</html>
