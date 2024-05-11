@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Images/Main/Logo.png">
+    <link rel="stylesheet" href="CSS/Registration.css"></link>
+    <link rel="stylesheet" href="CSS/generalStyle.css"></link>
+
+    <title>Registration Page</title>
+</head>
+<body>
+
+
+    <aside id="AllPages" class="jumpAllPages">
+        <nav>
+            <a class="sidebar-content" href = "index.html">Page 1 - Home</a>
+            <a class="sidebar-content" href = "Register.html">Page 2 - Register</a>
+            <a class="sidebar-content" href = "RegisterWelcome.html">Page 3 - After registration</a>
+            <a class="sidebar-content" href = "play_platform.html">Page 4 - Play</a>
+            <a class="sidebar-content" href = "howToPlay.html">Page 5 - How to play</a> 
+        </nav>
+    </aside>
+
+    <img src="Images/Main/RegistrationLogo.png" alt="registration_image_error">
+    <label class="jumpAllPages-menu">
+        <input type="checkbox" id="jumpCheckbox">
+        <span class="custom-checkbox"></span>
+        Show all pages
+    </label>
+    <form id="registrationForm" method="POST">
+        <div id="button_back">
+            <button type="button" onclick="returnHome()">Back</button>
+        </div>
+        <div>
+            <label for="fullName">Full name:</label>
+            <input type="text" id="fullName_textfield" name="fullName" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username_textfield" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email_textfield" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password_textfield" name="password" required>
+
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password_textfield" name="confirm_password" required>
+        </div>
+        <div id="Confirm_button">
+            <button type="submit" id = "registerBtn" onclick="register()">Register</button>
+        </div>
+
+    </form>
+
+    <script src="JS/Global_Variables.js"></script>
+    <script src="JS/Registration.js"></script>
+    <script src="JS/generalJS.js"></script>
+</body>
+</html>

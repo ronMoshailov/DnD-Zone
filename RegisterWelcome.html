@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Images/Main/Logo.png">
+    <link rel="stylesheet" href="CSS/generalStyle.css"></link>
+    <link rel="stylesheet" href="CSS/RegistrationWelcomePage.css"></link>
+
+
+    <title>Welcome Page</title>
+</head>
+<body>
+    <label class="jumpAllPages-menu">
+        <input type="checkbox" id="jumpCheckbox">
+        <span class="custom-checkbox"></span>
+        Show all pages
+    </label>
+
+    <aside id="AllPages" class="jumpAllPages">
+        <nav>
+            <a class="sidebar-content" href = "index.html">Page 1 - Home</a>
+            <a class="sidebar-content" href = "Register.html">Page 2 - Register</a>
+            <a class="sidebar-content" href = "RegisterWelcome.html">Page 3 - After registration</a>
+            <a class="sidebar-content" href = "play_platform.html">Page 4 - Play</a>
+            <a class="sidebar-content" href = "howToPlay.html">Page 5 - How to play</a> 
+        </nav>
+    </aside>
+    <img src="Images/Main/RegistrationLogo.png" alt="registration_image_error">
+    <div id="content">
+        <div id="first_row">
+            <div class="containerButtons">
+                <div id="button_frame">
+                    <button onclick="returnHome()">Go Home</button>
+                    <button onclick="openTutorial()">Open Tutorial</button>
+                </div>
+            </div>
+            <div id="register_radio">
+                <label>Choose Role:</label>
+                <div id="from-check-container">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="userRole" id="playerRole" value="playerRole" checked>
+                        <label class="form-check-label" for="playerRole">Adventurer</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="userRole" id="dmRole" value="dmRole">
+                        <label class="form-check-label" for="dmRole">Dungeon Master</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+    </div>
+
+
+    <script src="JS/Global_Variables.js"></script>
+    <script src="JS/Registration.js"></script>
+    <script src="JS/generalJS.js"></script>
+</body>
+</html>

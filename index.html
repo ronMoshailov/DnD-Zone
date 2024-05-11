@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">   
+    <link rel="stylesheet" href="CSS/Header.css"></link>
+    <link rel="stylesheet" href="CSS/index.css"></link>
+    <link rel="stylesheet" href="CSS/generalStyle.css"></link>
+    <!-- <link rel="icon" href="Images/Main/LogoDnDdragon.png">-->
+    <link rel="icon" href="Images/Main/Logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body >
+    <header>
+    <div>
+        <!-- Menu -->
+        <div class="navbar-container">
+<div id="upperHeader">
+    <div id="leftUpperHeader">
+                <img id="logo" src="Images/Main/Logo.png" alt="Logo_Error">
+                <button id="loginButton" type="button" data-toggle="modal" data-target="#loginModal">Login</button>
+                <button id="logoutButton" type="button" onclick="logout()">Logout</button>
+                <span id="userInfo"></span>
+    </div>
+                <div id="allIcons">
+                    <img class="icon" id="facebook_icon" src="Images/Main/Facebook.png" alt="facebook_image_error">
+                    <!-- <img class="icon" id="telegram_icon" src="Images/Main/Telegram.png" alt="facebook_image_error"> -->
+                    <img class="icon" id="twitter_icon" src="Images/Main/Twitter.png" alt="facebook_image_error">
+                    <img class="icon" id="youtube_icon" src="Images/Main/Youtube.png" alt="facebook_image_error">
+                    <img class="icon" id="instagram_icon" src="Images/Main/Instagram.png" alt="facebook_image_error">
+                </div>
+            </div>
+            <div class="navbar-mobile">
+                <!-- <div id="burgerDiv"> -->
+                    <label class="hamburger-menu">
+                        <input type="checkbox" />
+                    </label>
+                <!-- </div> -->
+                <aside class="sidebar">
+                    <nav>
+                        <div><a onclick="displayHomePageButton()" id="mobile-home">Home</a></div>
+                        <div><a onclick="displayAboutPageButton()" id="mobile-about">About</a></div>
+                        <div><a onclick="displayRacesPageButton()" id="mobile-races">Races</a></div>
+                        <div><a onclick="displayClassesPageButton()" id="mobile-classes">Classes</a></div>
+                        <div><a onclick="displayPlayPageButton()" id="mobile-play">Play</a></div>
+                        <div><a href="Register.html" id="mobile-Register">Register</a></div>
+                        <div><a id="mobile-login" data-toggle="modal" data-target="#loginModal">Login</a></div>
+                        <div><a id="mobile-logout" type="button" onclick="logout()">Logout</a></div>
+                    </nav>
+                </aside>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a class="bubbleButton" onclick="displayHomePageButton()">Home</a></li>
+                    <li><a class="bubbleButton" onclick="displayAboutPageButton()">About</a></li>
+                    <li><a class="bubbleButton" onclick="displayRacesPageButton()">Races</a></li>
+                    <li><a class="bubbleButton" onclick="displayClassesPageButton()">Classes</a></li>
+                    <li><a class="bubbleButton" onclick="displayPlayPageButton()">Play</a></li>
+                    <li><a class="bubbleButton" href="Register.html">Register</a></li>           
+                </ul>     
+            </nav>
+        </div>
+
+    </div>
+    <label class="jumpAllPages-menu">
+        <input type="checkbox" id="jumpCheckbox">
+        <span class="custom-checkbox"></span>
+        Show all pages
+    </label>
+
+    </header>
+<aside id="AllPages" class="jumpAllPages">
+    <nav>
+    <a class="sidebar-content" href = "index.html">Page 1 - Home</a>
+    <a class="sidebar-content" href = "Register.html">Page 2 - Register</a>
+    <a class="sidebar-content" href = "RegisterWelcome.html">Page 3 - After registration</a>
+    <a class="sidebar-content" href = "play_platform.html">Page 4 - Play</a>
+    <a class="sidebar-content" href = "howToPlay.html">Page 5 - How to play</a> 
+</nav>
+</aside>
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+        <!-- Modal Header -->
+      <div class="modal-header">
+        <!-- Title -->
+        <h5 class="modal-title" id="loginTitle">Enter Session</h5>
+        <!-- Close button -->
+        <!-- <button id="modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+        <button id="closeLoginBtn" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+        <!-- Login Modal -->
+     
+      <div class="modal-body" id="loginBody">
+        <!-- <form id="login_form" method="POST" onsubmit="return checkLogin()"> -->
+        <form id="login_form" method="POST">
+            <!-- <br> -->
+            <div class="form-group">
+                <!-- <label id="login_email" for="fname">Email:</label> -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email_for_php" class="form-control" placeholder="example@email.com">
+            </div>
+            <!-- <br><br> -->
+            <div class="form-group">
+                <!-- <label id="login_email" for="fname">Email:</label> -->
+                <label id="login_password" for="password">Password:</label>
+                <input type="password" id="password" name="password_for_php" class="form-control" placeholder="*********">
+            </div>
+            <!-- <br><br> -->
+            <!-- Radio Button -->
+            <div class="user-role">
+                <div class="form-check">
+                    <input class="form-check-input playerRole" type="radio" name="userRole" value="playerRole" checked>
+                    <label class="form-check-label" for="playerRole">Adventurer</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input dmRole" type="radio" name="userRole" value="dmRole">
+                    <label class="form-check-label" for="dmRole">Dungeon Master</label>
+                </div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button id="enterBtn" type="submit" class="btn btn-secondary" onclick="checkLogin()">Login</button>
+            </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+        <!-- Modal Header -->
+      <div class="modal-header">
+        <!-- Title -->
+        <h5 class="modal-title" id="updateTitle">Update User Info</h5>
+        <!-- Close button -->
+        <!-- <button id="modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+        <!-- <button id="closeLoginBtn" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+
+      <!-- Modal Body -->
+    <!-- update modal -->
+    <div class="modal-body" id="updateBody">
+        <form id="update_form" method="POST">
+            <div class="form-group">
+                <label id="email">Email:</label>
+                <input type="email" id="updateEmail" name="email_for_php" class="form-control" placeholder="example@email.com" readonly>
+            </div>
+            <div class="form-group">
+                <label>Full name:</label>
+                <input id="updateFullname" name="fullName_for_php" class="form-control">
+            </div>
+            <div class="form-group">
+                <label id="update_password" for="password">Password:</label>
+                <input type="password" id="updatePassword" name="password_for_php" class="form-control" placeholder="*********">
+            </div>
+            <div class="form-group">
+                <label id="update_username" for="username">Username:</label>
+                <input type="username" id="updateUsername" name="username_for_php" class="form-control" placeholder="*********">
+            </div>
+            <div id="register_radio">
+                <div class="form-check">
+                    <input class="form-check-input playerRole" type="radio" name="userRole" value="playerRole" checked>
+                    <label class="form-check-label" for="playerRole">Adventurer</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input dmRole" type="radio" name="userRole" value="dmRole">
+                    <label class="form-check-label" for="dmRole">Dungeon Master</label>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button id="updateBtn" type="submit" class="btn btn-secondary"">Update</button>
+            </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- MessageUs Modal -->
+<div class="modal fade" id="messageUsModal" tabindex="-1" aria-labelledby="messageUsTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <!-- Modal Header -->
+      <div class="modal-header">
+        <!-- Title -->
+        <h5 class="modal-title" id="messageUsTitle">Message Us</h5>
+        <!-- Close button -->
+        <button id="modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> 
+      <!-- Modal Body -->
+      <div class="modal-body" id="messageUsBody">
+        <!-- <form id="login_form" method="POST" onsubmit="return checkLogin()"> -->
+        <form id="messageUs_form" action="MAILTO:someone@example.com" enctype="text/plain">
+
+            <!-- input No.1 (email) -->
+            <div class="form-group">
+                <label for="messageUs_email">Email:</label>
+                <input type="email" id="messageUs_email" class="form-control" value="support@DnDzone.com" readonly>
+            </div>
+            <!-- input No.2 + datalist -->
+            <div class="form-group">
+                <label for="messageUs_subject">Subject:</label>
+                <input id="messageUs_subject" list="messageUs_datalist" class="form-control" placeholder="subject" required>
+                <datalist id="messageUs_datalist">
+                    <option value="Connection Problem">
+                    <option value="Offensive Speech">
+                    <option value="Inappropriate Name">
+                    <option value="Obscene Content">
+                    <option value="Spam">
+                </datalist>
+            </div>
+            <!-- textarea -->
+            <div class="form-group">
+                <label for="messageUs_message">Message:</label>
+                <textarea id="messageUs_message" placeholder="Hello, I have a problem in..." rows="2" cols="79" required></textarea>
+                <!--  input No.3 (color) -->
+                <div id="color_text"><label>Color</label><input type="color" id="messageColor"></div>
+                <br>
+            </div>
+            <!-- select -->
+            <div class="form-group">
+                <label for="messageUs_message">Reason:
+                    <select name="Reason" id="messageUs_select" required>
+                        <option value="" disabled selected>Select Reason</option>
+                        <option value="login">Login</option>
+                        <option value="registration">Registration</option>
+                        <option value="in_game">In Game</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+            </div>
+            <br>
+            <!-- input No.4 (password) -->
+            <div class="form-group">
+                <label class="fullwidth" for="messageUs_password">password
+                    <input type="password" id="messageUs_password" name="messageUs_password" class="form-control" placeholder="*********">
+                </label>
+            </div>
+            <br>  
+            <!-- input No.5 (number) -->
+            <div class="form-group">
+                <label class="fullwidth" for="messageUs_number">number
+                    <input type="number" id="messageUs_number" name="messageUs_number" class="form-control">
+                </label>
+            </div>
+            <br>  
+            <!-- input No.6 (range) -->
+            <div class="form-group">
+                <label for="messageUs_message">How many times have you encountered the problem?
+                    <input type="range" id="messageUs_range" name="points" min="0" max="100" value="0" required>
+                    <span id="rangeValue">0</span> times.
+                </label>
+            </div>
+            <br>
+            <!-- input No.7 (tel) -->
+            <div class="form-group">
+                <label for="messageUs_phone_number">Send answer to your phone
+                    <input type="tel" id="messageUs_phone_number" name="messageUs_phone_number" pattern="05(0|2|4|8)[0-9]{7}" required>
+                </label>
+                <span> format: 05xxxxxxxx</span>
+            </div>
+            <br>
+            <!-- input No.8 (datetime) -->
+            <div class="form-group">
+                <label for="messageUs_datetime">When did you first encounter the problem?
+                    <input type="datetime" id="messageUs_datetime" required>
+                </label>
+            </div>
+            <br>
+            <!-- input No.9 (datetime-local) -->
+            <div class="form-group">
+                <label for="messageUs_datetime-local">When did you next time encountered the problem?
+                    <input type="datetime-local" id="messageUs_datetime-local" required>
+                </label>
+            </div>
+            <br>
+            <!-- input No.10 (date) -->
+            <div class="form-group">
+                <label for="messageUs_date">date:
+                    <input type="date" id="messageUs_date" required>
+                </label>
+            </div>
+            <br>
+            <!-- input No.11 (time) -->
+            <div class="form-group">
+                <label for="messageUs_time">time:
+                    <input type="time" id="messageUs_time" required>
+                </label>
+            </div>
+            <br>
+            <!-- input No.12 (url) -->
+            <div class="form-group">
+                <label for="messageUs_copy_to">Website of your company:</label><br>
+                <input type="url" id="messageUs_copy_to" class="form-control" name="messageUs_copy_to" placeholder="https://www.example.com/">
+            </div>
+            <br>
+            <!-- input No.13 (file) -->
+            <div class="form-group">
+                <label id="messageUs_uploadfile_label" for="messageUs_file">upload an image (Nadav approved doing the "upload a file" control on another page)
+                    <input type="file" id="messageUs_file" name="myfile">
+                </label>
+                <span id="fileName"></span>
+            </div>
+            <br>          
+            <!-- Modal Footer + button control -->
+            <div class="modal-footer">
+                <button id="messageUsButton" type="submit">Send Email</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+
+
+
+
+
+
+    <!-- MainPage -->
+    <div class="stylePage" id="mainPage">
+
+        <main>
+            <div class="intro">
+                <h1>Sign-Up For Free</h1>
+              <button class="registerbtn" onclick="displayRegistrationPageButton()()">Register Now</button>
+            </div>
+            <div class="features">
+              <h1>Why D&D Zone?</h1>
+              <div class="ul-container">
+                <ul>
+                    <li><img src="Images/Main/Dice.png" alt="Dice">Play D&D anytime, anywhere, with anyone</li>
+                    <li><img src="Images/Main/Map.png" alt="Map">Create and explore immersive worlds and adventures</li>
+                    <li><img src="Images/Main/Book.png" alt="Book">Access a rich library of official and fan-made resources</li>
+                    <li><img src="Images/Main/Chat.png" alt="Chat">Connect and communicate with a friendly and diverse community</li>
+                </ul>
+              </div>
+            </div>
+          </main>
+    </div>
+    <!-- AboutPage -->
+    <div class="stylePage displayNone" id="aboutPage">
+        <div class="About-container">
+        <h2 style="border-top:none">About the game</h2>
+        <img id="aboutImage" src="Images/About/full team.png" alt="Error iamge">
+        <p>
+"Dungeons & Dragons (D&D) stands as a beacon in the realm of tabletop role-playing games (RPGs), its genesis dating back to the storied year of 1974 when visionaries Gary Gygax and Dave Arneson first unveiled its wondrous tapestry. Within this captivating universe, players are beckoned to partake in an odyssey through realms teeming with enchantment, peril, and boundless opportunity.
+        </p>
+        <p>
+At its heart, D&D is a collaborative journey, where the bonds forged around the gaming table are as enduring as the tales spun within. Through shared triumphs and defeats, laughter and tears, players weave a narrative tapestry that transcends the confines of the game itself, leaving an indelible mark upon the annals of their shared imagination.
+        </p>
+        <p>
+So gather your companions, ready your dice, and embark upon an adventure like no other. For in the world of Dungeons & Dragons, the only limit is the scope of your imagination, and the journey ahead promises untold wonders waiting to be discovered."
+        </p>
+     </div>
+        <div class="About-container">
+        <h2>Core Concepts</h2>
+        <img src="Images/About/Image02.png" alt="Error iamge">
+        <p>
+            1) The Multiverse: D&D is set in a vast multiverse consisting of multiple planes of existence. These planes range from the material plane (where most adventures occur) to elemental planes, outer planes inhabited by deities and other celestial beings, and more.
+        </p>
+        <p>
+            2) Magic and Mythology: Magic is a fundamental force in the D&D universe. It permeates the world, and spellcasting is a common aspect of many characters. The game draws inspiration from various mythologies, folklore, and classic fantasy literature.
+        </p>
+     </div>
+        <div class="About-container">
+        <h2>Campaign Settings</h2>
+            <img src="Images/About/Image03.png" alt="Error iamge">
+            <p>D&D offers various campaign settings, each with its own unique background story. Some notable settings include:</p>
+            <p>1) Forgotten Realms: Renowned for its vastness and depth, the Forgotten Realms is a high fantasy universe teeming with varied cultures, ancient magic, and legendary sites. It's home to the famous city of Waterdeep, the                   mysterious Underdark, and a pantheon of gods who play a pivotal role in the world's complex web of epic tales and conflicts.</p>
+            <p>2)Eberron: A world where magic fuels technology, Eberron combines elements of fantasy with steampunk. It's a realm of airships, lightning rails, and sentient constructs, set against a noir backdrop with a rich narrative                  following the aftermath of a devastating war. The struggle for power, the quest for secrets, and the exploits of adventurers shape the ongoing saga.</p>
+            <p>3)Dragonlance: This setting unfolds an epic story of good versus evil, centered on the world of Krynn. Dragons soar the skies, and deities meddle in mortal affairs. Heroes like the mage Raistlin Majere and the warrior                    Tanis Half-Elven face off against the forces of darkness, and their stories are chronicled in a series of books that complement the roleplaying experience.</p>
+            <p>4)Greyhawk: As the brainchild of D&D co-creator Gary Gygax, Greyhawk epitomizes the classical high fantasy genre. It's a world where kingdoms rise and fall, and the forces of good battle the tides of evil. It features a                  rich tapestry of history where adventurers can leave their mark on a world filled with ancient mysteries and political intrigue.</p>
+            <p>5)Planescape: This setting is unique in that it spans the multiverse, focusing on the city of Sigil, the Center of the Planes. Here, philosophy and belief can shape reality, and factions vie for influence over the cosmos.                It invites adventurers to traverse strange and wondrous planes of existence, each governed by its own set of rules and populated by distinctive creatures.</p>
+
+        </div>
+        <div class="About-container">
+            <h2>Themes</h2>
+            <img src="Images/About/Image04.png" alt="Error iamge">
+            <p>
+    Dungeons & Dragons is a game that delves deep into the heart of adventure and the spirit of exploration. It's a world where themes of heroism and valor stand in stark contrast to the shadowy forces of evil and corruption. Players are invited to navigate complex moral landscapes where decisions have weight and the line between right and wrong is often shrouded in mystery.
+            </p>
+            <p>
+    The essence of D&D lies in its power to ignite the imagination, foster creativity, and build worlds that teem with endless possibilities. It's not just a game of chance and combat but a platform for collaborative storytelling where each player, alongside the Dungeon Master, weaves a tale ripe with legend and lore.
+            </p>
+                    <p>
+                Themes of camaraderie, sacrifice, and discovery are central to the D&D experience. Parties of adventurers embark on quests that take them through ancient ruins, across haunted wildlands, and into the lairs of fearsome beasts. Along the way, they forge bonds that turn companions into family, and their stories into legends passed down through the ages.
+            </p>
+                    <p>
+                The game also explores the nuances of power and the responsibilities that come with it. Will the wizard use her arcane knowledge for the betterment of all, or will the allure of dark magic prove too tempting? Can the paladin maintain his virtuous path, or will he falter when faced with the ultimate test? D&D provides a playground for these narratives to unfold, challenging players to consider the impact of their characters' journeys.
+            </p>
+                    <p>
+                Dungeons & Dragons is more than a game; it's a celebration of bravery, a test of character, and a journey into the unknown. It's where epic sagas are born, and where you decide the fate of worlds. Join us at the table, and be part of the adventure that has captivated millions, as you leave your mark on the annals of fantasy and the chronicles of heroism.
+            </p>
+        </div>
+        <div class="About-container">
+        <h2>Player Agency</h2>
+        <img src="Images/About/Image05.png" alt="Error iamge">
+        <p>
+At the core of Dungeons & Dragons lies the powerful concept of player agency, the driving force that transforms the game into an immersive, dynamic storytelling experience. Within the realm of D&D, players wield unparalleled freedom, making choices that ripple through the narrative, shaping not just their characters’ destinies but the very fabric of the world they inhabit.
+        </p>
+        <p>
+The role of the Dungeon Master (DM) is pivotal, acting as both the architect and the conduit for the narrative. The DM orchestrates the setting and responds fluidly to the players' actions, weaving their decisions into the unfolding tapestry of the tale. This collaborative exchange ensures that no two campaigns are ever the same, with each decision leading to a branching path of potential outcomes.
+        </p>
+        <p>
+            Player agency empowers participants to leave their mark on the game’s universe, whether it be through heroic feats, cunning strategy, or personal character development. It’s this agency that turns a simple quest into a saga, a band of adventurers into heroes, and a game into a legend.
+        </p>
+        <p>
+            Dungeons & Dragons is more than a game; it’s a narrative playground. The background stories, rich with history and lore, are mere starting points for the adventures that lie ahead. The game’s inherent flexibility and the DM's creativity combine to adapt to the players’ visions, ensuring that their journey is as boundless as their imagination.
+        </p>
+        <p>
+            From the echoes of ancient myths to the creation of new epic tales, player agency is the heartbeat of the experience. Every choice, every triumph, and every setback is part of a collective story that evolves with the players. It’s here, at the intersection of chance, choice, and creativity, that D&D campaigns bloom into life, offering a unique and unforgettable adventure for all who dare to play.
+        </p>
+        </div>
+     </div>
+
+    <!-- RacesPage -->
+    <div class="stylePage displayNone" id="racesPage">
+        <h2><span>Races</span></h2>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Humans:</span> As one of the most adaptable and widespread races, humans are known for their versatility and ambition. They can be found in various cultures, and their diversity makes them well-suited for different character classes.
+            </p>
+            <img src="Images/Races/Humans.png" alt="Error iamge">
+        </div>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Elves:</span> Elves are long-lived and graceful beings with a deep connection to nature. They are often portrayed as skilled archers and mages. Subraces, such as High Elves, Wood Elves, and Dark Elves (Drow), provide additional variations.
+            </p>
+            <img src="Images/Races/Elves.png" alt="Error iamge">
+        </div>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Dwarves:</span> Stout and robust, dwarves are known for their craftsmanship, mining skills, and resilience. They are often depicted as skilled warriors and skilled metalworkers.
+            </p>
+            <img src="Images/Races/Dwarves.png" alt="Error iamge">
+        </div>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Halflings:</span> Small, agile, and often living in rural areas, halflings are known for their love of food and simple pleasures. They make excellent thieves and rogues due to their nimbleness.
+            </p>
+            <img src="Images/Races/Halflings.png" alt="Error iamge">
+        </div>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Gnomes:</span> Gnomes are inventive and curious, with a love for tinkering and magic. Forest gnomes and rock gnomes are common subtypes, each with its own unique traits.
+            </p>
+            <img src="Images/Races/Gnomes.png" alt="Error iamge">
+        </div>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Half-Elves:</span> Born of both human and elven parentage, half-elves often struggle with their dual heritage. They possess a mix of traits from both races, making them adaptable and charismatic.
+            </p>
+            <img src="Images/Races/Half-Elves.png" alt="Error iamge">
+        </div>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Half-Orcs:</span> The offspring of humans and orcs, half-orcs are known for their strength and endurance. They often face prejudice due to their orcish ancestry.
+            </p>
+            <img src="Images/Races/Half-Orcs.png" alt="Error iamge">
+        </div>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Tieflings:</span> Tieflings have infernal heritage, often with demonic bloodlines. They have unique physical characteristics such as horns, tails, and unusual eye colors. Tieflings often struggle with the prejudices associated with their demonic ancestry.
+            </p>
+            <img src="Images/Races/Tieflings.png" alt="Error iamge">
+        </div>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Dragonborn:</span> Humanoid creatures with draconic ancestry, dragonborn possess dragon-like features and abilities. They are often associated with specific dragon types, and their breath weapon varies accordingly.
+            </p>
+            <img src="Images/Races/Dragonborn.png" alt="Error iamge">
+        </div>
+    </div>
+    <!-- ClassesPage -->
+    <div class="stylePage displayNone" id="classesPage">
+        <h2><span>Classes</span></h2>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Barbarian:</span> Masters of primal rage and physical prowess, barbarians tap into their inner fury to become formidable warriors on the battlefield. They often come from tribal backgrounds and embrace a wild, untamed fighting style.
+            </p>
+            <img src="Images/Classes/Barbarian.png" alt="Error iamge">
+        </div>
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Bard:</span> Bards are versatile performers and spellcasters who use their artistic talents to weave magic into their performances. They can inspire allies, cast spells, and even steal the abilities of others.
+            </p>
+            <img src="Images/Classes/Bard.png" alt="Error iamge">
+        </div>
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Cleric:</span> Devoted to a deity or a set of divine principles, clerics are healers and divine spellcasters. They can also serve as warriors or support characters, depending on their chosen domain.
+            </p> 
+            <img src="Images/Classes/Cleric.png" alt="Error iamge">
+        </div>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Druid:</span> Guardians of the natural world, druids have a deep connection with the environment and can shape-shift into animals. They use nature-based magic and have unique abilities related to the wilderness.
+            </p>
+            <img src="Images/Classes/Druid.png" alt="Error iamge">
+        </div>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Fighter:</span> Fighters are skilled warriors who excel in combat. They can specialize in various combat styles, such as archery, two-weapon fighting, or defense. Fighters are versatile and adaptable to different combat situations.
+            </p>
+            <img src="Images/Classes/Fighter.png" alt="Error iamge">
+        </div>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Monk:</span> Masters of martial arts and discipline, monks harness their inner ki to achieve extraordinary feats. They are agile, fast, and can even catch arrows in mid-air.
+            </p>
+            <img src="Images/Classes/Monk.png" alt="Error iamge">
+        </div>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Paladin:</span> Holy warriors and champions of justice, paladins are heavily armored fighters with a strong moral compass. They possess divine magic and abilities to smite enemies.
+            </p>
+            <img src="Images/Classes/Paladin.png" alt="Error iamge">
+        </div>
+
+        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Ranger:</span> Rangers are skilled hunters and trackers with a strong connection to the natural world. They are proficient with ranged weapons, have survival skills, and often have animal companions.
+            </p>
+            <img src="Images/Classes/Ranger.png" alt="Error iamge">
+        </div>
+
+                <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Rogue:</span> Masters of stealth and cunning, rogues are skilled thieves, assassins, and infiltrators. They excel at surprise attacks, evasion, and using their wits to overcome challenges.
+            </p>
+            <img src="Images/Classes/Rogue.png" alt="Error iamge">
+        </div>
+                <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Sorcerer:</span> Sorcerers derive their magical power from innate sources, often a result of bloodline or a magical event. They cast spells with charisma and can unleash powerful, raw magic.
+            </p>
+            <img src="Images/Classes/Sorcerer.png" alt="Error iamge">
+        </div>
+                        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Warlock:</span> Warlocks form pacts with otherworldly entities, gaining magical powers in exchange for their service. They have a unique spellcasting system and can summon eldritch invocations.
+            </p>
+            <img src="Images/Classes/Warlock.png" alt="Error iamge">
+        </div>
+                        <div class="paragrapAndImage">
+            <p>
+                <span class="boldUnderline">Wizard:</span> Wizards are scholarly spellcasters who learn magic through study and practice. They have access to a wide range of spells and can specialize in different schools of magic.
+            </p>
+            <img src="Images/Classes/Wizard.png" alt="Error iamge">
+        </div>
+    </div>
+    <!-- PlayPage -->
+    <div class="stylePage displayNone" id="playPage">
+    <div class="PlayContainer">
+        <label for="MapUpload" class="upload-button">Upload Map<input type="file" id="MapUpload" accept="image/*"></label>
+        <label for="CharacterImgUpload" class="upload-button">Upload Character<input type="file" id="CharacterImgUpload" accept="image/*"></label>
+        <a id="openCharacterSheet" target="_blank" href="https://media.wizards.com/2022/dnd/downloads/DnD_5E_CharacterSheet_FormFillable.pdf">Open character sheet</a>
+    </div>
+    <div class="PlayContainerInfo">
+        <label class="upload-button" id="changeMapName">Choose map name</label>
+    </div>
+    <canvas id="PlayCanvas"></canvas>
+    </div>
+    <!-- AdventurerPage -->
+    <div class="stylePage displayNone" id="AdventurerPage">
+        <h2 class = "playerTitle">Player Notes</h2>
+
+        <form id="notesForm" method="post">
+            <label id = "sessionLable" for="sessionDate">Session Date:</label><br>
+            <input type="date" id="sessionDate" name="sessionDate"><br><br>
+            <textarea id="sessionNotes" name="sessionNotes" placeholder="Write your notes here..."></textarea><br>
+            <input type="hidden" id="username" name="username" value=""> 
+            <button class="Characterbutton" type="button" onclick="saveNotes()">Save Note</button>
+            <button class="Characterbutton" type="button" data-toggle="modal" data-target="#notesModal" onclick="uploadNotes()">Upload Note</button>
+        </form>
+
+        <!--Audio-->
+        <h2 class="playerTitle">Background Music</h2>
+        <div class="fileUploadContainer">
+            <label id="addMusic_button" for="audioFile" class="Characterbutton">Choose File</label>
+            <span id="selectedFileName">No file chosen</span>
+            <input type="file" id="audioFile" accept="audio/*" onchange="updateFileName()">
+        </div>
+        <audio controls id="audioPlayer">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <h2 class="playerTitle">How to play</h2>
+        <button class="Characterbutton" type="button" onclick="uploadLearn()" >Learn more</button>
+
+        <h2 class="playerTitle">Create a character</h2>
+        <button class="Characterbutton" type="button" data-toggle="modal" data-target="#sheetModal">Create Character Sheet</button>
+        <br>
+            <!-- The Notes Modal -->
+        <div class="modal fade" id="notesModal" tabindex="-1" aria-labelledby="notesTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" style = "max-width:90%">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <!-- Title -->
+                        <h5 class="modal-title" id="loginTitle">Choose note (YYYY/MM/DD)</h5>
+                        <!-- Close button -->
+                        <!-- <button id="modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+                        <button id="closeLoginBtn" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!-- Modal Body -->                  
+                    <div class="modal-body" id="notesBody">
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- The Sheet Modal -->
+        <div class="modal fade" id="sheetModal" tabindex="-1" aria-labelledby="sheetTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" style = "max-width:90%">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <!-- Title -->
+                        <h5 class="modal-title" id="loginTitle">Your Character Sheet</h5>
+                        <!-- Close button -->
+                        <!-- <button id="modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+                        <button id="closeLoginBtn" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!-- Modal Body -->                  
+                    <div class="modal-body" id="sheetBody">
+                        <iframe id="sheetPDF" src="CharacterSheets/Blank_Character_Sheet.pdf"  width="100%" style = "height: 75vh"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- AdminPage -->
+    <div class="stylePage displayNone" id="AdminPage">
+        <h2 style = "font-size:4vw" > Registered Users </h2>
+        <table id = "usersTable">
+            <tr>
+                <th class = "usersTH">Full name</th>
+                <th class = "usersTH">Username</th>
+                <th class = "usersTH">Email</th>
+                <th class = "usersTH">Password</th>
+            </tr>         
+        </table>
+    </div>
+        <!-- NadavPage -->
+    <div class="stylePage displayNone" id="NadavPage">
+        <h2 style="font-size:4vw">Nadav Page</h2>
+        <h3 class="playerTitle">Calculator form</h3>
+        <form class="calcForm">
+            <label for="num1">Enter 1st number:</label>
+            <input type="number" id="num1" name="num1"><br><br>
+
+            <label for="operation">Operation:</label>
+            <select id="operation" name="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">x</option>
+                <option value="/">÷</option>
+            </select><br><br>
+
+            <label for="num2">Enter 2nd number:</label>
+            <input type="number" id="num2" name="num2"><br><br>
+            <input type="button" id="calcBtn" value="Submit"><br><br>
+
+        </form>
+
+        <!-- Outputs -->
+        <div class="calcForm">
+            <p id="resultString"></p>
+            <div id="resultNumber"></div>
+        </div>
+    </div>
+</div>
+</body>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <h3>Contact Us</h3>
+            <p>Email: info@dndadventurehub.com</p>
+            <p>Phone: (123) 456-7890</p>
+            <button id="messageUsButton" type="button" data-toggle="modal" data-target="#messageUsModal">message us</button>
+        </div>
+
+        <div class="footer-content">
+            <h3>Follow Us</h3>
+            <a href="https://www.Facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.Twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.Instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.Youtube.com" target="_blank">Youtube</a>
+        </div>
+
+        <div class="footer-content">
+            <h3>Quick Links</h3>
+            <a href="Footer/privacy-policy.html">Privacy Policy</a>
+            <a href="Footer/Terms-of-Service.html">Terms of Service</a>
+            <a href="Footer/Q&A.html">FAQs</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 D&D Zone. All rights reserved.</p>
+    </div>
+</footer>
+<!-- Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+    <script src="https://cdnjs.com/libraries/pdf.js"></script>
+    <script src="JS/phaser.min.js"></script>
+    <script src="JS/Global_Variables.js"></script>
+    <script src="JS/JQuery.js"></script>
+    <script src="JS/index.js"></script>
+    <script src="JS/Adventurer.js"></script>
+    <script src="JS/Login.js"></script>
+    <script src="JS/canvas.js"></script>
+    <script src="JS/Admin.js"></script>
+    <script src="JS/Nadav.js"></script>
+    <script src="JS/generalJS.js"></script>
+
+
+    
+
+    <!-- <script src="JS/canvasTest.js"></script> -->
+
+    <!-- <script src="JS/index - Copy.js"></script> -->
+
+</html>

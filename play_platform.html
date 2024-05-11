@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="JS/phaser.min.js"></script>
+    <script src="JS/play_platform.js"></script>
+    <script src="JS/GeneralFunction.js"></script>
+    <link rel="stylesheet" href="CSS/generalStyle.css"></link>
+    <link rel="stylesheet" href="CSS/Play.css"></link>
+    <link rel="icon" href="Images/Main/Logo.png">
+
+</head>
+<body>
+    <label class="jumpAllPages-menu">
+        <input type="checkbox" id="jumpCheckbox">
+        <span class="custom-checkbox"></span>
+        Show all pages
+    </label>
+
+    <aside id="AllPages" class="jumpAllPages">
+        <nav>
+            <a class="sidebar-content" href = "index.html">Page 1 - Home</a>
+            <a class="sidebar-content" href = "Register.html">Page 2 - Register</a>
+            <a class="sidebar-content" href = "RegisterWelcome.html">Page 3 - After registration</a>
+            <a class="sidebar-content" href = "play_platform.html">Page 4 - Play</a>
+            <a class="sidebar-content" href = "howToPlay.html">Page 5 - How to play</a> 
+        </nav>
+    </aside>
+    <button id="HomeButton" class="mapButton" onclick="goHome()">Home</button>
+    
+    <div id="row1" class="row">
+        <div class="fileUploadContainer">
+            <label for="mapUpload" class="mapButton">Upload Map</label>
+            <span id="mapName">No file chosen</span>
+            <input type="file" id="mapUpload" class="playInput" name="mapUpload">
+        </div>
+        <label for="tokenUpload" class="mapButton">Upload Character</label>
+        <input type="file" id="tokenUpload" class="playInput" name="tokenUpload">
+        <a id="downloadCharacterAndMaps" href="Downloads/Characters And Maps.zip" download="Characters And Maps.zip">Download Characters and Maps</a>
+    </div>
+    <br>
+    <div class="row">
+        <button id="deleteToken" class="tokenButton" disabled="">Delete Token</button>
+        <button id="renameToken" class="tokenButton" disabled="">Rename Token</button>
+        <button id="hideTokenName" class="tokenButton" disabled="">Hide Name</button>
+
+
+        <p>Size the Token:</p>
+        <button class="sizeBtn" id="sizeUp" disabled="">+</button>
+        <button class="sizeBtn" id="sizeDown" disabled="">-</button>
+    </div>
+    <br>
+    
+    <script src="JS/generalJS.js"></script>
+
+</body>
+</html>
