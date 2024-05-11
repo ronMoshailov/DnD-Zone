@@ -1,0 +1,716 @@
+/* Our CSS: */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+ /* Custome CSS */
+.col-12{
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.displayNone{
+    display:none;
+}
+#notesBody li{
+     list-style-position: inside;
+}
+#notesBody ul li:hover {
+    cursor: pointer;
+}
+
+#userInfo:hover{
+    cursor: pointer;
+}
+/* General CSS for everything*/
+*{
+    font-family: "Fantasy", cursive !important;
+}
+.boldUnderline{
+    font-weight: bold;
+    text-decoration: underline;
+    margin-right: 3%;
+}
+
+/* First row of main page */
+#videoContainer{
+    display: flex;
+    width: 100%;
+    height: 600px;
+    padding: 1%;
+    gap: 1%;
+}
+
+/* First row-left of main page */
+
+#Enemies{
+    width: 50%;
+    background-color: #84abbd8a;
+    border-radius: 6%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+
+/* maybe delete */
+#Enemies p{
+    font-size: 90%;
+    background-color: #ffffff3d;
+    border-radius: 15px;
+}
+/* maybe delete */
+
+#titleEnemies{
+    /* position: absolute;
+    top: 3%;
+    left: 12%; */
+}
+
+.playerTitle{
+    color: #98FF98 !important;
+    text-decoration: underline 2px;
+    font-size: 32px !important;
+    margin-bottom: 10px !important;
+    -webkit-text-stroke: 1.5px #080f08;
+    
+}
+
+audio {
+  width: 40%;
+  padding: 10px;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #142932ab;
+  color: #98FF98;
+  border-radius: 8px;
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: transparent;
+  cursor:pointer;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(100deg) brightness(200%) contrast(100%);
+
+}
+
+audio::-webkit-media-controls-timeline {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(100deg) brightness(200%) contrast(100%);
+}
+audio::-webkit-media-controls-mute-button {
+    background-color: #B1D4E0;
+    border-radius: 50%;
+    cursor: pointer;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(100deg) brightness(200%) contrast(100%);
+
+}
+audio::-webkit-media-controls-volume-slider {
+  background-color: transparent;
+  cursor:pointer;
+  transform: rotate(180deg); /* Rotate the slider container 180 degrees */
+
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  color: #98FF98;
+}
+
+#audioPlayer{
+    align-self: center;
+    margin-bottom:20px;
+}
+#sessionLable{
+    color: #a5c4a5;
+    font-weight: bold;
+}
+#sessionNotes{
+    padding: 10px;
+    resize: vertical;
+    border-radius: 10px;
+    border: 2px solid #337f33;
+    width: 80%;
+    height: 20vh;
+    color: #98FF98;
+    background: #142932ab;
+}
+
+#sessionDate{
+    padding: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 2px solid #337f33;
+    border-radius: 5px;
+    background-color: #142932ab;
+    color: #98FF98;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#usersTable{
+    border-radius: 20px;
+    margin: 1% 2%;
+    background: #84abbd8a;
+    color: #98FF98;
+    caption-side: bottom;
+    border-collapse: collapse;
+    
+}
+.usersTH{
+    color: #98FF98;
+    text-decoration: underline 2px;
+    font-size: 24px;
+    -webkit-text-stroke: 2px #080f08;
+}
+.Characterbutton {
+    background-color: #142932ab;
+    color: #d0d472;
+    cursor: pointer;
+    margin: 10px auto;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 12px;
+    transition: background-color 0.5s ease, border 0.5s ease !important;
+    box-shadow: 0 0 10px rgb(0 0 0 / 51%);
+    text-decoration: none;
+}
+.Characterbutton:hover {
+    background-color: #142932; 
+    transform: translateY(5px); 
+    border: 2px solid #CBB26A;
+}
+#customThumbnail{
+    padding: 0.5%; /* Adjust this value as needed */
+    border-radius: 30px;
+    margin: 0;
+    width: 50%;
+    /* height: 600px; */
+    box-sizing: border-box; /* This ensures the padding and border are within the width and height */
+    transition: padding 0.5s ease, border 0.4s ease; /* Smooth transition for padding */
+    box-shadow: 0 0 10px rgb(0 0 0);
+}
+.videoFace{
+    width: 20%;
+    height: auto;
+    border-radius:300px;
+}
+.my{
+    margin: 5% 0%;
+}
+#customThumbnail:hover{
+    /* border: 3px solid #d0d472; */
+    padding: 0;
+    /* border-radius: 30px; */
+}
+#customThumbnail.hovered {
+    /* border: 3px solid #d0d472; */
+    padding: 0;
+    /* border-radius: 30px; */
+}
+.center-image{
+    position: absolute;
+    top: 82%;
+    right: 20%;
+    z-index: 10;
+    width: 10%;
+    cursor: pointer;
+}
+#centered-image{
+   transition: opacity 0.5s ease-in-out; 
+}
+
+#centered-image:hover{
+    opacity: 0;
+}
+#youtubeVideo{
+    display: none;
+    border-radius: 30px;
+    margin: 0;
+    width: 50%;
+}
+
+
+
+
+
+/* Body & Pages */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/Images/Backgrounds/CampGPT03.jpg');
+    background-size: cover;  
+    background-position: center center;
+    background-attachment: fixed;
+}
+#welcomeVideo{
+    display: flex;
+}
+#welcomeVideo p{
+    width: 50%;
+}
+#welcomeVideo iframe{
+    width: 50%;
+}
+/* main page */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1%;
+  padding: 1%;
+  height: 85vh;
+}
+.features {
+  background-color: #84abbd8a;
+  border-radius: 6%;
+  display: flex;
+  padding: 5%;
+  align-items: center;
+  flex-direction: column;
+}
+.features h1{
+    border-bottom: 0.3vw solid black;
+    border-radius: 10px;
+    margin-bottom: 10%;
+}
+.features h3 {
+  font-size: 24px;
+  text-align: center;
+  order: -1;
+}
+.features .ul-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+.features ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3%;
+  list-style: none;
+}
+.features ul li {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  background-color: #ffffff3d;
+  border-radius: 15px;
+  padding-right: 5%;
+}
+.features ul li img {
+  width: 25%;
+  height: 30%;
+  margin: 5%;
+}
+.intro {
+  background-image: url(../Images/Backgrounds/Monk_Smash.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 6%;
+}
+  h1{
+      font-size: 3rem;
+  }
+.intro h1{
+    align-self: flex-start;
+    color: #d0d472;
+    background-color: #142932ab;
+    border-radius: 10px;
+    padding: 0% 3%;
+    position: absolute;
+    top: 7%;
+}
+.intro h2 {
+  font-size: 32px;
+}
+  
+.intro p {
+  font-size: 18px;
+}
+.intro button {
+  position: absolute;
+  background-color: #142932ab;
+  color: #d0d472;
+  cursor: pointer;
+  bottom: 10%;
+  padding: 1% 5%;
+  font-size: 120%;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: background-color 0.5s ease, transform 1s ease, border 0.5s ease !important; 
+}
+.intro button:hover {
+    background-color: #142932; 
+    transform: translateY(5px); 
+    border: 0.2vw solid #CBB26A;
+}
+/* stylePage */
+.stylePage {
+  /* max-width: 95vw; */
+  max-width: 2000px;
+  width: 95vw;
+  margin: 0 auto;
+  background-color: rgb(29 38 81 / 42%);
+  box-shadow: 0 0 10px rgb(0 0 0 / 51%);
+  border-radius: 20px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  position: relative;
+  text-align: center;
+  flex-direction: column;
+}
+.stylePage h2 {
+  color: #d0d472;
+  padding: 1%;
+  margin-top: 2%;
+  margin-bottom: auto;
+  text-align: center;
+  font-size: x-large;
+  text-decoration: underline;
+}
+.stylePage img{
+    max-width: 85vw;
+    /* max-height: 70vh; */
+    margin: 1% 0%;
+}
+.spanTitle{
+  background-color: #84abbd8a;
+  border-radius: 6%;
+  width: 50%;
+}
+#aboutPage p{
+    background-color: #ffffff94;
+    border-radius: 30px;
+    margin: 1% 3%;
+    padding: 1%;
+    text-align: left;
+    font-size: larger;
+}
+#aboutPage h2{
+    font-size: 3.5vw;
+}
+.About-container{
+    background-color:#84abbd8a;
+    border-radius: 20px;
+    margin: 5px;
+}
+.About-container h2{
+    border-top: 2px solid #cbb26a !important;
+}
+.About-container p{
+    font-size: 100%;
+}
+#racesPage h2{
+    border-top: none;
+    font-size: 4vw;
+}
+#classesPage h2{
+    border-top: none;
+    font-size: 4vw;
+}
+#playPage{
+    align-items: center;
+}
+/* Blocks of <p> and <img> in the pages */
+.paragrapAndImage{
+    display: flex;
+    background-color: #84abbd8a;
+    border-radius: 15px;
+    margin: 2vh 1vw;
+    align-items: center;
+    justify-content: space-between;
+}
+.paragrapAndImage p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    padding: 2%;
+    width: 85%;
+    text-align: left;
+    display: flex;
+    font-size: larger;
+}
+.paragrapAndImage img{
+  width: 10%;
+  height: fit-content;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 1vw;
+}
+/* More CSS */
+#calcBtn{
+    background-color: #142932ab;
+    color: #d0d472;
+    flex-direction: row-reverse;
+    padding: 8px 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    margin-top: 5px;
+    transition: background-color 0.5s ease, border 0.5s ease !important;
+    box-shadow: 0 0 10px rgb(0 0 0 / 51%);
+}
+
+/* footer CSS */
+footer {
+    background-color: rgb(29 38 81 /93%);;
+    color: #ecf0f1;
+    padding: 0.1%;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+.footer-content {
+    flex: 1;
+    max-width: 30vw;
+    text-align: center;
+}
+.footer-content h3 {
+    color: #3498db;
+}
+.footer-content a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+.footer-content a:hover {
+    color: #2980b9;
+}
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    color: #bdc3c7;
+}
+
+
+#PlayCanvas {
+    width: 85%;
+    height: 100%;
+    margin: 15px;
+    border: 2px solid black;
+    }
+.PlayContainer {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+}
+.PlayContainerInfo {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+}
+
+input[type="file"] {
+    display: none;
+ }
+
+
+.fileUploadContainer {
+    display: inline-block;
+    height: 60px;
+    position: relative;
+}
+
+#selectedFileName {
+    color: #d0d472;
+    -webkit-text-stroke: 1.5px #080f08;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+label.upload-button {
+    display: flex;
+    background-color: #142932ab;
+    color: #d0d472;
+    cursor: pointer;
+    flex-direction: row-reverse;
+    margin-right: 1vw;
+    padding: 0.5% 1.5%;
+    font-weight: bold;
+    border-radius: 12px;
+    right: 15vw;
+    margin-top: 5px;
+    transition: background-color 0.5s ease, border 0.5s ease !important;
+    box-shadow: 0 0 10px rgb(0 0 0 / 51%);
+}
+
+#openCharacterSheet{
+    background-color: #142932ab;
+    color: #d0d472;
+    cursor: pointer;
+    margin-right: 1vw;
+    padding: 0.5% 1.5%;
+    font-weight: bold;
+    border-radius: 12px;
+    right: 15vw;
+    margin-top: 5px;
+    transition: background-color 0.5s ease, border 0.5s ease !important;
+    box-shadow: 0 0 10px rgb(0 0 0 / 51%);
+    text-decoration: none;
+}
+
+#technicalSupportTitle{
+    flex-grow: 1; 
+    text-align: center; 
+    color: #d0d472;
+}
+
+/* Mobile-Size */
+@media only screen and (min-width: 1025px) {
+.sidebar{
+    display: none !important;
+}
+}
+@media only screen and (max-width: 1024px) {
+
+#loginButton , #logoutButton{
+    display:none !important;
+}    
+.icon{
+    max-height: 6vw;
+}
+  main {
+    grid-template-columns: 1fr; 
+    height: auto;
+  }
+  .features, .intro {
+    order: unset; 
+  }
+  .intro {
+    height: auto; 
+    padding-top: 55%; 
+  }
+  .intro button{
+      padding: 1vh 3vw;
+      font-size: 2.5vw;
+      transition: background-color 0.5s ease;
+  }
+  h1{
+      font-size: 5vw;
+  }
+  .features ul li{
+      font-size: 3vw;
+  }
+  .features ul li img{
+      width: 15vw;
+      height: 7vh;
+  }
+  .footer-container {
+    flex-direction: column; 
+    align-items: center; 
+  }
+  .footer-content {
+    max-width: 100%; 
+    margin-bottom: 3%; 
+  }
+  .hamburger-menu{
+      display: flex;
+  }
+  .navbar{
+      display: none !important;
+  }
+  .sidebar{
+      display: flex;
+  }
+}
+
+/* I don't remember why this is here */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+ul {
+    padding-inline-start: 0px;
+}
+
+
+#aboutImage{
+    width: 70%;
+}
+
+.form-group textarea{
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+}
+.calcForm{
+    background-color: #84abbd8a;
+    width: 80%;
+    align-self: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+#messageUs_message{
+    color: var(--text-color); 
+}
+#color_text{
+    display: flex;
+}
+#messageUsButton{
+    background-color: #142932ab;
+    color: #d0d472;
+    cursor: pointer;
+    padding: 8px 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    transition: background-color 0.5s ease, border 0.5s linear !important;
+    box-shadow: 0 0 10px rgb(0 0 0 / 51%);
+}
+#messageUsButton:hover{
+    border: 2px solid #CBB26A;
+}
+#messageUs_uploadfile_label{
+    background-color: #142932ab;
+    color: #d0d472;
+    cursor: pointer;
+    padding: 0.5% 1.5%;
+    border-radius: 12px;
+    transition: background-color 0.5s ease, border 0.5s ease !important;
+    box-shadow: 0 0 10px rgb(0 0 0 / 51%);
+    border: 1px solid #d0d472;
+    /* font-weight: bold; */
+    /* display: flex; */
+    /* flex-direction: row-reverse; */
+    /* margin-right: 1vw; */
+    /* right: 15vw; */
+    /* margin-top: 5px; */
+}
+#messageUsButton{
+    background-color: #142932ab;
+    color: #d0d472;
+    cursor: pointer;
+    padding: 8px 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    transition: background-color 0.5s ease, border 0.5s linear !important;
+    box-shadow: 0 0 10px rgb(0 0 0 / 51%);
+}
+#messageUsButton:hover{
+    background-color: #142932; 
+    border: 2px solid #CBB26A;
+}
+.fullwidth{
+    width: 100%;
+}

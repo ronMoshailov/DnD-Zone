@@ -1,0 +1,108 @@
+body {
+    /* background-image: url('/Images/Backgrounds/RegistryBackground07.png'); //default background for larger screens */
+    background-image: url('/Images/Backgrounds/BackgroundPC.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.jumpAllPages-menu{
+    position: fixed;
+    left: 0;
+    background-color: #142932de;
+    padding: 20px;
+    border-radius: 30px;
+    font-size: larger;
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+    body {
+        
+        background-image: url('/Images/Backgrounds/AmazingChatGPT.png');
+    }
+    form{
+            width: 35vw !important;
+            top: 25%;
+            position: fixed;
+        }
+}
+
+
+label {
+        display: block;
+        margin-bottom: 5%;
+        text-align: center;
+        font-size: 2vw;
+        text-decoration: underline;
+    }
+
+input {
+        width: 100%;
+        padding: 3%;
+        margin-bottom: 5%;
+        box-sizing: border-box;
+        background-color: #b09d64;
+        color: white;
+        text-align: center;
+        font-size: 1.2vw;
+    }
+
+button {
+        background-color: #142932ab;
+        color: #d0d472;
+        padding: 3%;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: 100%;
+        transition: background-color 0.5s ease, transform 0.5s ease, border 0.5s ease;
+        border-bottom: 0.2vw solid #CBB26A;
+    }
+
+#button_back{
+    min-height: 6vh;
+}
+
+#registerBtn{
+    width: 100%;
+    font-weight: bold;  
+    font-size: 120%;
+
+}    
+
+button:hover {
+        background-color: #142932; 
+        transform: translateY(5px); 
+        border: 0.2vw solid #CBB26A;
+    }
+
+form {
+        background-color: #84abbd8a;
+        padding: 2%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 25vw;
+        border: solid 4px #000000a3;
+        border-radius: 30px;
+        height: max-content;
+        margin-bottom: 3%;
+}
+
+img{
+    background-color: #000000bd;
+    border-radius: 30px;
+    margin: 0.5%;
+    border-bottom: 0.4vw solid #CBB26A;
+    width: 40vw;
+}
+
+
+#Confirm_button{
+    min-height: 7vh;
+}
+

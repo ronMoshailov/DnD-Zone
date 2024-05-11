@@ -1,0 +1,83 @@
+.jumpAllPages-menu {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color: wheat;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.jumpAllPages-menu input[type="checkbox"] {
+    display: none; /* Hide the default checkbox */
+}
+
+.jumpAllPages-menu .custom-checkbox {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: 2px solid #d1d1d1;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.jumpAllPages-menu:hover .custom-checkbox {
+    background-color: #e6e6e6;
+    border-color: #c2c2c2;
+}
+
+.jumpAllPages-menu input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #4CAF50; /* Change color to your preference */
+    border-color: #4CAF50;
+}
+
+.jumpAllPages-menu input[type="checkbox"]:checked + .custom-checkbox::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+
+.jumpAllPages {
+  position: fixed;
+  right: 0;
+  transition: transform var(--animation-timing);
+  transform: translateX(100%);
+  top: 34%;
+}
+
+:root {
+  --animation-timing: 600ms ease-in-out;
+}
+
+.jumpAllPages{
+    z-index: 999;
+    height: 40%;
+    background-color: #142932ab;
+    padding: 20px;
+    border-radius: 30px;
+}
+.jumpAllPages.active {
+    transform: translateX(0);
+
+}
+
+.jumpAllPages nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.jumpAllPages nav a{
+    color: wheat;
+    text-decoration: none;
+    font-size: large;
+}

@@ -1,0 +1,117 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Fantasy", cursive !important;
+    background: linear-gradient(191deg, #424c76, #0e131d);
+    }
+    
+canvas{
+    width:80%;
+    height:70%;
+    border: 5px solid #94956b;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #d4d4d499; 
+}
+.jumpAllPages-menu{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color: wheat;
+}
+input[type="file"] {
+    display: none;
+ }
+ #row1{
+    width: 80vw;
+    margin-top: 30px;
+ }
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    }
+        
+.sizeBtn{
+
+    margin-right:50px;
+    color: #d0d472;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 5px 15px;
+
+}
+
+#HomeButton{
+    position: fixed;
+    left: 1%;
+}
+.tokenButton{
+    margin-right:50px;
+    color: #d0d472;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 5px 15px;
+    }
+#downloadCharacterAndMaps{
+    background-color: #142932ab;
+    color: #d0d472;
+    cursor: pointer;
+    margin: auto 10px;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 12px;
+    transition: background-color 0.5s ease, border 0.5s ease !important;
+    box-shadow: 0 0 10px rgb(0 0 0 / 51%);
+    text-decoration: none;
+}
+
+#hideTokenName:not(:disabled),
+#deleteToken:not(:disabled),
+#renameToken:not(:disabled),
+#sizeUp:not(:disabled),
+#sizeDown:not(:disabled){
+    background-color: #142932ab; /* Change background color when not disabled */
+    }
+    
+#sizeUp{
+    margin:10px;
+    }
+    
+.playInput{
+    margin: 10px;
+    color: #d0d472;
+    -webkit-text-stroke: 1.5px #080f08;
+    font-size: 20px;
+    font-weight: bold;
+}
+.mapButton {
+    background-color: #142932ab;
+    color: #d0d472;
+    cursor: pointer;
+    margin: auto 10px;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 12px;
+    transition: background-color 0.5s ease, border 0.5s ease !important;
+    box-shadow: 0 0 10px rgb(0 0 0 / 51%);
+    text-decoration: none;
+}
+.mapButton:hover {
+    background-color: #142932; 
+    border: 0.2vw solid #CBB26A;
+}
+
+#mapName{
+    margin-right: 100px;
+    color: #d0d472;
+    -webkit-text-stroke: 1.5px #080f08;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#addMusic_button{
+    position: absolute;
+    left: 40%;
+}

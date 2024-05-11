@@ -1,0 +1,104 @@
+body {
+    /* background-image: url('/Images/Backgrounds/RegistryBackground07.png'); //default background for larger screens */
+    background-image: url('/Images/Backgrounds/BackgroundPC.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.jumpAllPages-menu{
+    left: 0;
+    position: fixed;
+    right: 0;
+    background-color: #142932de;
+    padding: 14px;
+    border-radius: 30px;
+    font-size: small;
+    font-weight: bold;
+    max-width: 150px;
+}
+/* Media query for tablets */
+@media (max-width: 1024px) {
+    body {
+        background-image: url('/Images/Backgrounds/AmazingChatGPT.png');
+    }
+}
+
+#content{
+    border: solid 4px #000000a3;
+    border-radius: 30px;    width: 80vw;
+    background-color: #84abbd8a;
+    padding: 2%;
+    flex-direction: column;
+}
+
+#first_row{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ffffff3d;
+    border-radius: 15px;
+}
+
+.containerButtons{
+    height: 30%;
+    padding: 2%;
+    flex-direction: column;
+    width: 50%;    
+    border-right: 3px solid #000000a3;
+}
+
+button {
+        background-color: #142932ab;
+        color: #d0d472;
+        padding: 2%;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: 100%;
+        transition: background-color 0.5s ease, transform 0.5s ease, border 0.5s ease;
+        border-bottom: 0.2vw solid #CBB26A;
+    }
+
+img{
+    background-color: #000000bd;
+    border-radius: 30px;
+    margin: 0.5%;
+    border-bottom: 0.4vw solid #CBB26A;
+    width: 40vw;
+}
+
+#button_frame{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#register_radio {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    /* border-left: 3px solid; */
+    /* border-radius: 15px; */
+    align-items: center;
+    padding: 2%;
+}
+
+#register_radio label{
+    font-size: 2vw;
+    text-decoration: underline;
+}
+
+#from-check-container{
+    display: flex;
+    margin-top: 5%;
+}
+
+#register_radio .form-check .form-check-label {
+    font-size: 1.5vw;
+}
