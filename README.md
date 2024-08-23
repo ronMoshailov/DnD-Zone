@@ -20,6 +20,7 @@ To get started with the D&D Zone, follow these steps:
 3. Choose in login the role you want to play.
 4. Open "Play" page and the page that will display will fit for the role.
 5. Enjoy!
+6. 
 ![image](https://github.com/user-attachments/assets/69f775bc-67c3-48ea-b690-c08a1634dcd3)
 
 ![image](https://github.com/user-attachments/assets/8dc7c70c-967b-4891-9e23-6510fba3f829)
