@@ -1,26 +1,26 @@
-# D&D Adventure Hub
+![image](https://github.com/user-attachments/assets/228df291-b96a-492c-8d37-7dc7d7f00088)
 
-Welcome to the **D&D Adventure Hub**! This website is designed to be a central location for Dungeon Masters (DMs) and players to create, share, and explore custom Dungeons & Dragons adventures. Whether you're preparing for your next session or looking for inspiration, this site has everything you need to enhance your D&D experience.
+
+# D&D Zone
+
+Welcome to the **D&D Zone**! This website is designed to be a central location for Dungeon Masters (DMs) and players to create, share, and explore custom Dungeons & Dragons adventures. Whether you're preparing for your next session or looking for inspiration, this site has everything you need to enhance your D&D experience.
 
 ## Features
 
 - **Adventure Creation**: Easily create and customize your own D&D adventures, complete with maps, NPCs, and detailed storylines.
-- **Campaign Management**: Keep track of your campaign's progress, including player stats, inventory, and completed quests.
+- **Campaign Management**: Keep track of your campaign's progress, inventory, and completed quests.
 - **Resource Library**: Access a growing library of D&D resources, including rulebooks, monster manuals, and character sheets.
-- **Community Sharing**: Share your adventures with the community and explore content created by other DMs.
-- **Interactive Tools**: Use built-in tools like a dice roller, name generator, and battle map creator to streamline your gameplay.
 
 ## Getting Started
 
-To get started with the D&D Adventure Hub, follow these steps:
+To get started with the D&D Zone, follow these steps:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/YourUsername/dnd-adventure-hub.git
-```
-2. Install the necessary dependencies:
-```npm install
-```
-3. Start the development server:
-```npm start
-```
+1. Connect to any user (username: myAdmin, password: 123).
+2. Choose in login the role you want to play.
+3. Open "Play" page and the page that will display will fit for the role. 
+
+![image](https://github.com/user-attachments/assets/69f775bc-67c3-48ea-b690-c08a1634dcd3)
+
+![image](https://github.com/user-attachments/assets/8dc7c70c-967b-4891-9e23-6510fba3f829)
+
+![image](https://github.com/user-attachments/assets/e2718d45-deff-44c0-a41e-bda6f78d2acb)
