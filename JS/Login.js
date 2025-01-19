@@ -9,14 +9,14 @@ function checkLogin(){
     userRole = document.querySelector('input[name="userRole"]:checked').value;
     
     //check Data
-    if (email == ''){
-        alert("Please insert email.")
-        return;
-    }
-    if (password == ''){
-        alert("Please insert password.")
-        return;
-    }
+    // if (email == ''){
+    //     alert("Please insert email.")
+    //     return;
+    // }
+    // if (password == ''){
+    //     alert("Please insert password.")
+    //     return;
+    // }
 
     // Construct the data object to send in the request body
     var formData = new FormData();
