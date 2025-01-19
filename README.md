@@ -24,9 +24,6 @@ To get started with the D&D Zone, follow these steps:
 3. **Enjoy the Experience**
    - Explore the features and enjoy playing as your selected role!
 
-### Note:
-This project was originally built as a website with a server backend using PHP. However, running the project locally no longer requires a server because it is now displayed as static files using Live Server or any similar local hosting method.
-
 ## Installation and Setup
 
 1. Clone repository to your local machine.
@@ -37,6 +34,11 @@ This project was originally built as a website with a server backend using PHP. 
 5. Right-click on the index.html file (or the main HTML file) and select "Open with Live Server".
 7. Enjoy!
    
+## Note:
+This project was originally built as a website with a server backend using PHP. However, running the project locally no longer requires a server because it is now displayed as static files using Live Server or any similar local hosting method.
+
+## Photos
+
 ![image](https://github.com/user-attachments/assets/69f775bc-67c3-48ea-b690-c08a1634dcd3)
 
 ![image](https://github.com/user-attachments/assets/8dc7c70c-967b-4891-9e23-6510fba3f829)
